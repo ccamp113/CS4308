@@ -1,4 +1,4 @@
-/* File: Token.java
+/* File: Assignment.java
  Name: Cameron Campbell
  CS4308-02
 */
