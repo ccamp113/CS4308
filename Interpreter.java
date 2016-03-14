@@ -1,3 +1,7 @@
+/* File: Interpreter.java
+ Name: Cameron Campbell
+ CS4308-02
+ */
 import java.io.FileNotFoundException;
 
 
@@ -8,20 +12,28 @@ public class Interpreter
     {
         try
         {
-            String fileName = "test4.lua";
-
-            //DEBUG: Displays Tokens
-            /*LexicalAnalyzer test = new LexicalAnalyzer(fileName);
-            while (test.getLookaheadToken().getTokType() != TokenType.EOS_TOK) {
-                Token tok = test.getNextToken();
-                System.out.println("Token test: " + tok.getLexeme() + " with token_id: " + tok.getTokType());
-            }*/
-
-            Parser p = new Parser(fileName);
+          
+            Parser p = new Parser("test1.lua");
             p.parse();
-
-
         }
+            try
+            {
+              
+                Parser p = new Parser("test2.lua");
+                p.parse();
+            }
+                try
+                {
+                  
+                    Parser p = new Parser("test3.lua");
+                    p.parse();
+                }
+                    try
+                    {
+                      
+                        Parser p = new Parser("test4.lua");
+                        p.parse();
+                    }
         catch (ParserException e)
         {
             e.printStackTrace();
@@ -37,8 +49,3 @@ public class Interpreter
     }
 
 }
-
-/***********************************************
-98/100 = 49/50 (late) Please see my comments in your
-code.
-*/
