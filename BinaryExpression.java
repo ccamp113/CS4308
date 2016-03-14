@@ -1,6 +1,7 @@
-/**
- * Created by Weston Ford on 2/12/2016.
- */
+/* File: BinaryExpression.java
+ Name: Cameron Campbell
+ CS4308-02
+*/
 public class BinaryExpression implements Expression {
     private Expression expr1, expr2;
 
