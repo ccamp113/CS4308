@@ -1,8 +1,7 @@
 /* File: Token.java
  Name: Cameron Campbell
  CS4308-02
- Valid Token Types. enum type enables for Tokentype
- to be the following set of predefined constants */
+ */
 
 import java.io.FileNotFoundException;
 import java.util.List;
