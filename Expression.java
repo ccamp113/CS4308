@@ -1,5 +1,6 @@
-/**
- * Created by Weston Ford on 2/12/2016.
+/* File: Expression.java
+ Name: Cameron Campbell
+ CS4308-02
  */
 public interface Expression {
     int evaluate();
