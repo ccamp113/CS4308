@@ -1,11 +1,12 @@
-/**
- * Created by Weston Ford on 2/12/2016.
+/* File: LexicalAnalyzer.java
+ Name: Cameron Campbell
+ CS4308-02
  */
-import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class LexicalAnalyzer {
 
@@ -98,11 +99,11 @@ public class LexicalAnalyzer {
                     break;
                 case "*": tokType = TokenType.MUL_TOK;
                     break;
-                case "-": tokType = TokenType.SUB_TOK;
-                    break;
-                case "/": tokType = TokenType.DIV_TOK;
-                    break;
                 case "=": tokType = TokenType.ASSIGN_TOK;
+                    break;
+                case "-": tokType = TokenType.SUB_TOK; 
+                    break;
+                case "/": tokType = TokenType.DIV_TOK; 
                     break;
                 case ">": tokType = TokenType.GT_TOK;
                     break;
@@ -184,29 +185,7 @@ public class LexicalAnalyzer {
         return ((checkAscii >= 65 && checkAscii <= 90) || (checkAscii >= 97 && checkAscii <= 122));
     }
 
-    public List<Token> saveState(){
-        List<Token> newSave = new ArrayList<Token>();
-        int i = 0;
-        while (i < tokens.size()) {
-            newSave.add(new Token(tokens.get(i).getRowNumber(), tokens.get(i).getColumnNumber(), tokens.get(i).getLexeme(), tokens.get(i).getTokType()));
-            i++;
-        }
-        return newSave;
-    }
-    public void loadState(List<Token> savedList){
-        tokens.clear();
-        int i = 0;
-        while (i < savedList.size()){
-            tokens.add(new Token(savedList.get(i).getRowNumber(), savedList.get(i).getColumnNumber(), savedList.get(i).getLexeme(), savedList.get(i).getTokType()));
-            i++;
-        }
-        
-        /************************************************
-         * last 2 methods should not be in the lexical
-         * analyzer
-         */
-
-    }
+    
 
 
 }
