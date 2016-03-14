@@ -1,6 +1,7 @@
-/**
- * Created by Weston Ford on 2/12/2016.
- */
+/* File: Token.java
+ Name: Cameron Campbell
+ CS4308-02
+*/
 public class Assignment {
     private Expression expr;
 
