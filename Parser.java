@@ -1,9 +1,7 @@
-/* File: Token.java
-Name: Cameron Campbell 
-CS4308-02 
-   Valid Token Types. enum type enables for Tokentype 
-   to be the following set of predefined constants */
-
+/* File: Parser.java
+ Name: Cameron Campbell
+ CS4308-02
+ */
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.ArrayList;
@@ -210,13 +208,6 @@ public class Parser {
         new Assignment(var, expr).execute();
     }
 
-
-    /*private Expression getStatement() throws ParserException, LexicalException
-    {
-        Expression expr;
-        Token tok = lex.getLookaheadToken();
-
-    }*/
     /**************************************************************
      * implements the production <expr> -> <operator> <expr> <expr> | id | constant
      */
@@ -274,12 +265,6 @@ public class Parser {
     private Expression getBooleanExpression() throws ParserException, LexicalException
     {
         BooleanOperator op;
-        //I can't explain why I decided to offload the responsibility
-        //of purging the initial conditional token to the getBooleanExpression
-        //method by calling getNextToken twice but I'm closing in on the end and
-        //I'd rather just make a note to both of us rather than deal with the inevitable
-        //fallout that would ensue from tampering with anything in this this
-        //delicately hacked together mess.
         lex.getNextToken();
         Token tok = lex.getNextToken();
         if (tok.getTokType() == TokenType.LE_TOK)
