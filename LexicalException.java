@@ -1,5 +1,6 @@
-/**
- * Created by Weston Ford on 2/12/2016.
+/* File: LexicalException.java
+ Name: Cameron Campbell
+ CS4308-02
  */
 public class LexicalException extends Exception {
 
