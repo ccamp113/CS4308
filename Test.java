@@ -1,8 +1,7 @@
-/* File: Token.java
+/* File: Test.java
 Name: Cameron Campbell 
 CS4308-02 
-   Valid Token Types. enum type enables for Tokentype 
-   to be the following set of predefined constants */
+*/
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -199,8 +198,7 @@ public class Parser {
                     tok.getRowNumber() + " and column " + tok.getColumnNumber());
         }
     }
-    // Original header
-    //public Assignment parse() throws ParserException, LexicalException
+
     private void Assign() throws ParserException, LexicalException
     {
         Id var = getId();
@@ -210,16 +208,6 @@ public class Parser {
         new Assignment(var, expr).execute();
     }
 
-
-    /*private Expression getStatement() throws ParserException, LexicalException
-    {
-        Expression expr;
-        Token tok = lex.getLookaheadToken();
-
-    }*/
-    /**************************************************************
-     * implements the production <expr> -> <operator> <expr> <expr> | id | constant
-     */
     private Expression getExpression() throws ParserException, LexicalException
     {
         Expression expr;
@@ -233,8 +221,6 @@ public class Parser {
             expr = getConstant();
         return expr;
     }
-
-
 
     /****************************************************
      * implements the production <expr> -> <operator> <expr> <expr>
@@ -274,12 +260,6 @@ public class Parser {
     private Expression getBooleanExpression() throws ParserException, LexicalException
     {
         BooleanOperator op;
-        //I can't explain why I decided to offload the responsibility
-        //of purging the initial conditional token to the getBooleanExpression
-        //method by calling getNextToken twice but I'm closing in on the end and
-        //I'd rather just make a note to both of us rather than deal with the inevitable
-        //fallout that would ensue from tampering with anything in this this
-        //delicately hacked together mess.
         lex.getNextToken();
         Token tok = lex.getNextToken();
         if (tok.getTokType() == TokenType.LE_TOK)
@@ -328,20 +308,20 @@ public class Parser {
         match (tok, TokenType.ID_TOK);
         return new Id (tok.getLexeme().charAt(0));
     }
-
-    private Expression getConstant() throws ParserException, LexicalException
-    {
-        Token tok = lex.getNextToken();
-        match (tok, TokenType.CONST_TOK);
-        int value = Integer.parseInt(tok.getLexeme());
-        return new Constant (value);
-    }
-
-    private void match(Token tok, TokenType tokType) throws ParserException
-    {
-        assert (tok != null && tokType != null);
-        if (tok.getTokType() != tokType)
-            throw new ParserException (tokType.name() + " expected at row " +
-                    tok.getRowNumber() +" and column "  + tok.getColumnNumber());
-    }
+   
+          private Expression getConstant() throws ParserException, LexicalException
+          {
+              Token tok = lex.getNextToken();
+              match (tok, TokenType.CONST_TOK);
+              int value = Integer.parseInt(tok.getLexeme());
+              return new Constant (value);
+          }
+    
+             private void match(Token tok, TokenType tokType) throws ParserException
+             {
+                 assert (tok != null && tokType != null);
+                 if (tok.getTokType() != tokType)
+                     throw new ParserException (tokType.name() + " expected at row " +
+                             tok.getRowNumber() +" and column "  + tok.getColumnNumber());
+             }
 }
