@@ -1,8 +1,9 @@
-/**
- * Created by Weston Ford on 2/12/2016.
+/* File: Memory.java
+ Name: Cameron Campbell
+ CS4308-02
  */
 public class Memory {
-    private static int[] mem = new int[57]; //57 or 58?
+    private static int[] mem = new int[58];
 
     /**
      * @param ch - must be a valid identifier
@@ -33,8 +34,8 @@ public class Memory {
 
     public static void displayMemory()
     {
-        //57 or 58?
-        for (int i = 0; i < 57; i++)
+ 
+        for (int i = 0; i < 58; i++)
             System.out.println ((char)('A' + i) + ": " + mem[i]);
     }
 }
