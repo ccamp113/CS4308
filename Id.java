@@ -1,5 +1,6 @@
-/**
- * Created by Weston Ford on 2/12/2016.
+/* File: Id.java
+ Name: Cameron Campbell
+ CS4308-02
  */
 public class Id implements Expression {
     private char ch;
